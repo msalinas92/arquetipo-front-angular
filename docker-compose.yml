@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+
+  frontangulararquetipo:
+    image: msalinas92/frontangulararquetipo
+    ports:
+      - "3000:80"
+    build:
+      context: .
+      dockerfile: ./Dockerfile

@@ -1,0 +1,15 @@
+{{- if .Values.route.enabled }}
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ include "front-angular-arquetipo.fullname" . }}
+spec:
+  host: {{ .Values.route.host }}
+  port:
+    targetPort: {{ .Values.service.port }}
+  to:
+    kind: Service
+    name:  {{ include "front-angular-arquetipo.fullname" . }}
+    weight: 100
+  wildcardPolicy: None
+{{- end }}
