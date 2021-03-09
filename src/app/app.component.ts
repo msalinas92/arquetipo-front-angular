@@ -7,7 +7,6 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   constructor(configService: AppService) {
     if(localStorage.getItem('apiurl') == null) {
       let apiUrl = configService.config.apiUrl;
